@@ -1,0 +1,375 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  box-sizing: border-box;
+}
+
+.nav-header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transform: translateY(0%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-header.hidden {
+  transform: translateY(-100%);
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+
+.nav-bar-wrapper {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1000px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+/* -------- Right Box -------- */
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  gap: 14px;
+}
+
+.nav-menu > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-menu > li > a {
+  font-weight: 400;
+  font-size: 14px;
+  text-wrap: nowrap;
+  color: rgb(67, 67, 67);
+}
+
+.nav-menu > li > a:hover {
+  color: rgb(0, 157, 255);
+  cursor: pointer;
+}
+
+#donate-button {
+  color: rgb(251, 251, 251);
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: #529afa;
+  padding: 7px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  place-items: center;
+  gap: 4px;
+  box-shadow: #529bfae6 0px 7px 29px 0px;
+}
+
+#donate-button > .heart {
+  font-size: 16px;
+}
+
+/* Mobile Right Box Menu */
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f3;
+  min-height: 100vh;
+  min-height: 100dvh;
+  transform: translateY(-100%);
+  z-index: -1;
+  transition: transform 0.4s ease-in-out;
+}
+
+.mobile-nav-menu.active {
+  transform: translateY(0%);
+}
+
+.mobile-nav-menu::after {
+  content: "";
+  flex: 1 1 auto;
+  background-color: #3a3a3a;
+}
+
+.mobile-nav-menu > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  border-bottom: 2px solid #e2e3e4;
+}
+
+.mobile-nav-menu > li > a {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  text-wrap: nowrap;
+  color: rgb(67, 67, 67);
+}
+
+.mobile-nav-menu > li > a:hover {
+  color: rgb(0, 157, 255);
+  cursor: pointer;
+}
+
+.mobile-nav-menu > li:last-child {
+  border: none;
+}
+
+/* -------- Left box -------- */
+
+.logo-left-box {
+  display: flex;
+  width: 100%;
+}
+
+.logo-image {
+  width: 150px;
+  height: auto;
+}
+
+.menu-right-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.menu-svg {
+  width: 24px;
+  height: auto;
+  display: none;
+  box-sizing: content-box;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.menu-svg:hover {
+  cursor: pointer;
+  background-color: #131314;
+  color: white;
+}
+
+/* -------- Hero Section -------- */
+
+.section {
+  min-height: 500px;
+  background-color: #529afa;
+}
+
+#hero-section {
+  background-image: url("overgrown_teaser_banner.webp");
+  background-position-x: 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  color: white;
+  padding: 100px 24px 40px;
+  min-height: 550px;
+}
+
+.hero-inner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+}
+
+#about-section {
+  background-color: #f2f2f3;
+}
+
+.hero-title {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 18px;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.new-video-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(30, 30, 30);
+  background-color: rgb(243, 243, 243);
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.svg-span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more-button {
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  background-color: hsla(0, 82%, 45%, 0.1);
+  backdrop-filter: blur(25px);
+}
+
+/* -------- About Section -------- */
+#about-section {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+.about-title {
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: rgb(87, 85, 85);
+}
+
+.card {
+  color: rgb(104, 102, 102);
+  flex: 1 1 calc(50% - 24px);
+  min-width: 0;
+  text-decoration: none;
+}
+
+.card:hover {
+  text-decoration: underline;
+}
+
+.card-title {
+  color: rgb(66, 66, 66);
+}
+
+.card-boxes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.card-bg-one {
+  background: url("5_2_lion.webp");
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+  margin-bottom: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-bg-two {
+  background: url("bcon26_key_art_1080p.jpg");
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+  margin-bottom: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-title {
+  font-size: 14px;
+}
+.card-description {
+  font-size: 21px;
+}
+
+.about-inner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .menu-svg {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-nav-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .ctas {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .new-video-button,
+  .learn-more-button {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
