@@ -19,7 +19,11 @@ mobileQuery.addEventListener("change", (e) => {
 
 // Showing and hiding the entire nav header on scroll
 const navHeader = document.querySelector(".nav-header");
+const hideThreshold = 100;
+
 let lastScrollY = window.scrollY;
+let directionStartY = window.scrollY;
+let scrollDirection = null; // "down" or "up"
 
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
@@ -29,9 +33,31 @@ window.addEventListener("scroll", () => {
     return;
   }
 
-  if (currentScrollY > lastScrollY) {
-    navHeader.classList.add("hidden");
-  } else {
+  if (currentScrollY <= 0) {
+    navHeader.classList.remove("hidden");
+    lastScrollY = currentScrollY;
+    directionStartY = currentScrollY;
+    scrollDirection = null;
+    return;
+  }
+
+  const delta = currentScrollY - lastScrollY;
+
+  if (delta > 0) {
+    if (scrollDirection !== "down") {
+      scrollDirection = "down";
+      directionStartY = lastScrollY;
+    }
+
+    if (currentScrollY - directionStartY >= hideThreshold) {
+      navHeader.classList.add("hidden");
+    }
+  } else if (delta < 0) {
+    if (scrollDirection !== "up") {
+      scrollDirection = "up";
+      directionStartY = lastScrollY;
+    }
+
     navHeader.classList.remove("hidden");
   }
 
