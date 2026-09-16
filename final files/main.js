@@ -1,3 +1,4 @@
+// Showing and hiding mobile menu 
 const menuIcon = document.querySelector(".menu-svg");
 const mobileMenu = document.querySelector(".mobile-nav-menu");
 
@@ -5,6 +6,8 @@ menuIcon.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
 });
 
+
+// Removing mobile menu during resize
 const mobileQuery = window.matchMedia("(max-width: 900px)");
 
 mobileQuery.addEventListener("change", (e) => {
@@ -14,6 +17,7 @@ mobileQuery.addEventListener("change", (e) => {
 });
 
 
+// Showing and hiding the entire nav header on scroll
 const navHeader = document.querySelector(".nav-header");
 let lastScrollY = window.scrollY;
 
